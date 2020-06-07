@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "3c22440e-487e-487d-b1ff-917c7e2e3157",
+		"name": "The Big Five",
+		"description": "Facebook, Twitter, Netflix, Amazon, Google",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GETs",
+			"item": [
+				{
+					"name": "GET amazon.com 'amazon'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "54fcd8ad-c9de-4988-a496-0627373f5321",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"  pm.expect(pm.response.text()).to.include('amazon');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://amazon.com",
+							"protocol": "http",
+							"host": [
+								"amazon",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET netflix.com 'Netflix'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b84f3da-dc82-42d7-9163-7864fafe3442",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.expect(pm.response.text()).to.include('Netflix');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://www.netflix.com",
+							"protocol": "http",
+							"host": [
+								"www",
+								"netflix",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET google.com 'Search'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52072063-e681-43d1-93d5-08259c1a82db",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.expect(pm.response.text()).to.include('input');",
+									"    pm.expect(pm.response.text()).to.match(/the world.s information/)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://google.com",
+							"protocol": "https",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET apple.com 'www.apple.com'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "82936d76-d8d9-42b1-9774-fec63b53d513",
+								"exec": [
+									"pm.test(\"Content test\", function () {",
+									"  pm.expect(pm.response.text()).to.include('www.apple.com');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.apple.com/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"apple",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Facebook for 'html'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "03267594-729c-4680-849f-a4c103116e37",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"  pm.expect(pm.response.text()).to.include('Connect with friends');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.facebook.com",
+							"protocol": "https",
+							"host": [
+								"www",
+								"facebook",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "HEADs",
+			"item": [
+				{
+					"name": "OPTIONS amazon.com 'amazon'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bf88f10d-598e-4a8a-8028-e1d0ab98c899",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "https://amazon.com/",
+							"protocol": "https",
+							"host": [
+								"amazon",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OPTIONS netflix.com 'Netflix'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16bb72de-a2d4-4dca-a0e3-5642fcd6ae88",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "http://www.netflix.com",
+							"protocol": "http",
+							"host": [
+								"www",
+								"netflix",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD google.com 'Search'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eab2c0db-214f-449e-a33d-07722076bd6d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://google.com",
+							"protocol": "https",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD apple.com 'www.apple.com'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5edb64d-7aea-407f-a5d1-5186361b2d61",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://www.apple.com/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"apple",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD Facebook for 'html'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cec80eb5-7286-455d-9d76-02330300a6f6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://www.facebook.com",
+							"protocol": "https",
+							"host": [
+								"www",
+								"facebook",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6943c78d-2703-4c57-8a36-0e3339eac596",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cf7dac00-bfd9-4aec-bcf4-114ab7ff8570",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
