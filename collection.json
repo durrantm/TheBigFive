@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "3c22440e-487e-487d-b1ff-917c7e2e3157",
-		"name": "The Big Five",
+		"name": "-The Big Five",
 		"description": "Facebook, Twitter, Netflix, Amazon, Google",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -310,6 +310,176 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://www.facebook.com",
+							"protocol": "https",
+							"host": [
+								"www",
+								"facebook",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "HEADs Performance",
+			"item": [
+				{
+					"name": "OPTIONS amazon.com 'amazon'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4ae2749-1ace-4058-aa68-cf09f4a9ae7a",
+								"exec": [
+									"pm.test(\"Response time is less than 5000ms\", function () {",
+									"    const waitTime = Number(pm.environment.get(\"waitTimeMS\"));",
+									"    pm.expect(pm.response.responseTime).to.be.below(waitTime);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "https://amazon.com/",
+							"protocol": "https",
+							"host": [
+								"amazon",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OPTIONS netflix.com 'Netflix'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "880ab88c-a9c1-493a-9392-f34be1addc2e",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    const waitTime = Number(pm.environment.get(\"waitTimeMS\"));",
+									"    pm.expect(pm.response.responseTime).to.be.below(waitTime);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"url": {
+							"raw": "http://www.netflix.com",
+							"protocol": "http",
+							"host": [
+								"www",
+								"netflix",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD google.com 'Search'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "62f3f5f3-e7c4-47c0-bd98-bf939ba7f9c1",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    const waitTime = Number(pm.environment.get(\"waitTimeMS\"));",
+									"    pm.expect(pm.response.responseTime).to.be.below(waitTime);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://google.com",
+							"protocol": "https",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD apple.com 'www.apple.com'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4401cf1-dac4-4326-9902-534e174ba1ad",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    const waitTime = Number(pm.environment.get(\"waitTimeMS\"));",
+									"    pm.expect(pm.response.responseTime).to.be.below(waitTime);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "https://www.apple.com/",
+							"protocol": "https",
+							"host": [
+								"www",
+								"apple",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD Facebook for 'html'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7a619828-d77a-4f5b-9feb-6f3e4e98f55d",
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    const waitTime = Number(pm.environment.get(\"waitTimeMS\"));",
+									"    pm.expect(pm.response.responseTime).to.be.below(waitTime);",
 									"});"
 								],
 								"type": "text/javascript"
