@@ -9,3 +9,16 @@ jobs:
       - newman/newman-run:
           collection: ./collection.json
           folder: GETs
+workflows:
+  version: 2
+  hourly:
+    triggers:
+      - schedule:
+          cron: "0 8 * * *"
+          filters:
+            branches:
+              only:
+                - /.*/
+    jobs:
+      - build
+
