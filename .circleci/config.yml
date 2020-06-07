@@ -8,4 +8,16 @@ jobs:
       - checkout
       - newman/newman-run:
           collection: ./collection.json
-          folder: GETs
+          folder: HEADs
+workflows:
+  version: 2
+  hourly:
+    triggers:
+      - schedule:
+          cron: "0,30 * * * *"
+          filters:
+            branches:
+              only:
+                - /.*/
+    jobs:
+      - build
